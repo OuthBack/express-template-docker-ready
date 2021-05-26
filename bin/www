@@ -4,20 +4,22 @@
  * Module dependencies.
  */
 
-var app = require("../app");                                    
+var app = require("../app");
 var debug = require("debug")("apocalipsez-backend:server");
 var http = require("http");
+const chalk = require("chalk");
 
 /**
  * Get port from environment and store in Express.
  */
-                                            
+
 var port = normalizePort(process.env.PORT || "3500");
 app.set("port", port);
+console.log(`Express.js is on port ${chalk.yellow(port)}`);
 
-/**                                                     
+/**
  * Create HTTP server.
- */                                           
+ */
 
 var server = http.createServer(app);
 
